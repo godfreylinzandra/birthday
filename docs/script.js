@@ -88,7 +88,7 @@ function blowPair() {
   if (statusBox) {
     statusBox.textContent = remaining > 0
       ? `${remaining} candles left`
-      : 'All candles blown out ';
+      : ' ';
   }
 
   if (remaining === 0) startFireworks();
