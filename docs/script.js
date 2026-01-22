@@ -1,28 +1,23 @@
 // -------------------- COUNTDOWN --------------------
-let count = 5;
+let count = 6;
 
 const countdownEl = document.getElementById('countdown');
 const startBtn = document.getElementById('startBtn');
-
-// Load audio
-const tickSound = new Audio('tick.mp3');
-const birthdaySound = new Audio('birthday.mp3');
-
+const tickSound = new Audio('tick.mp3'); 
 if (countdownEl) {
   countdownEl.innerText = count;
-  countdownEl.style.fontSize = '80px';
+  countdownEl.style.fontSize = '3000px';
 
   const interval = setInterval(() => {
     count--;
     if (count > 0) {
       countdownEl.innerText = count;
-      countdownEl.style.fontSize = '80px';
-      tickSound.play(); // play tick each second
+      countdownEl.style.fontSize = '150px';
+      tickSound.play().catch(() => {}); // play tick sound, ignore autoplay errors
     } else {
       countdownEl.innerText = 'Happy 27th Birthday Mechy!!! 🎉';
-      countdownEl.style.fontSize = '32px';
+      countdownEl.style.fontSize = '50px';
       startBtn.style.display = 'block';
-      birthdaySound.play(); // play celebration sound
       clearInterval(interval);
     }
   }, 1000);
@@ -30,10 +25,9 @@ if (countdownEl) {
 
 if (startBtn) {
   startBtn.onclick = () => {
-    window.location.href = 'index.html';
+    window.location.href = 'main.html';
   };
 }
-
 
 
 // -------------------- CANDLES & CAKE --------------------
