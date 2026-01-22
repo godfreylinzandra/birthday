@@ -1,0 +1,183 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: system-ui;
+  overflow: hidden;
+  background: linear-gradient(135deg, #FF9933, #FFCC66, #FFFFFF, #99CC66, #138808);
+}
+
+.screen {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-size: 2.5em;
+  text-align: center;
+  margin-bottom: 80px;
+  color: red;
+  z-index: 20;
+}
+
+h2 {
+  font-size: 50px;
+  margin-bottom: 80px;
+  color: black;
+}
+p {
+  font-size: 200px;
+  margin-bottom: 40px;
+  color: black;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 18px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 8px;
+  background: #ff7043;
+  color: white;
+  cursor: pointer;
+  z-index: 30;
+  position: relative;
+}
+button:hover{
+  background: red;
+}
+
+/* Cake */
+:root {
+  --cake: #f4b1a3;
+  --frost: #fff;
+  --plate: #fdeedb;
+}
+
+.cake-wrap {
+  position: relative;
+  width: 480px;
+  margin-top: 20px;
+  z-index: 20;
+}
+
+.cake {
+  background: var(--cake);
+  border-radius: 18px;
+  padding: 40px 20px 20px;
+  position: relative;
+}
+
+.frost {
+  position: absolute;
+  top: -12px;
+  left: 18px;
+  right: 18px;
+  height: 26px;
+  background: var(--frost);
+  border-radius: 14px;
+}
+
+.plate {
+  height: 26px;
+  background: var(--plate);
+  border-radius: 40px;
+  margin-top: 14px;
+}
+
+.candle-row {
+  position: absolute;
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  width: 360px;
+  justify-content: center;
+  z-index: 25;
+}
+
+.candle {
+  width: 12px;
+  height: 44px;
+  background: #ffd6a6;
+  border-radius: 3px;
+  position: relative;
+}
+
+.flame {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  width: 14px;
+  height: 20px;
+  transform: translateX(-50%);
+  border-radius: 50% 50% 40% 40%;
+  background: radial-gradient(circle at 40% 30%, #fff1a8, #ff8c42);
+  animation: flicker 0.2s infinite;
+}
+
+@keyframes flicker {
+  0% { transform: translateX(-50%) scale(1); }
+  50% { transform: translateX(-50%) scale(0.95); }
+  100% { transform: translateX(-50%) scale(1); }
+}
+
+.puff {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  pointer-events: none;
+  z-index: 40;
+}
+
+.puff span {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  background: #eee;
+  border-radius: 50%;
+  animation: puffAnim 0.8s forwards;
+}
+
+@keyframes puffAnim {
+  to {
+    transform: translateY(-40px) scale(1.4);
+    opacity: 0;
+  }
+}
+
+.status {
+  margin-top: 12px;
+  font-size: 16px;
+  text-align: center;
+  z-index: 30;
+}
+
+/* Fireworks */
+#fireworks {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 100%;
+  background: black;
+  display: none;
+}
+
+.firework {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  animation: explode 1s ease-out forwards;
+}
+
+@keyframes explode {
+  0% { transform: translate(0, 0) scale(1); opacity: 1; }
+  100% { transform: translate(var(--x), var(--y)) scale(4); opacity: 0; }
+}
